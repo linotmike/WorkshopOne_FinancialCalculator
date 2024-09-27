@@ -10,6 +10,7 @@ public class Main {
         double interest = interestMethod();
         System.out.println("Please enter the loan term in years?");
         int loanTermInYear = loanTermMethod();
+        calculateMortgage(principal,interest, loanTermInYear);
 
 
 
@@ -54,6 +55,13 @@ public class Main {
         }
         }
 
+    public static void calculateMortgage(int principal, double interest, int loanTermInYear){
+        double monthlyInterest = (interest/100)/12;
+        int monthlyTotal = loanTermInYear * 12;
+        double monthlyPayment = principal * (monthlyInterest * Math.pow(1 + monthlyInterest, monthlyTotal))/
+                (Math.pow(1 +monthlyInterest, monthlyTotal) -1);
+        System.out.println("The monthly payment is: " + monthlyPayment);
+    }
 
 
 
