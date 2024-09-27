@@ -5,7 +5,9 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         System.out.println("What is the principal amount?");
-        double principal = principalMethod();
+        int principal = principalMethod();
+        System.out.println("What is the interest rate?");
+        double interest = interestMethod();
 
 
 
@@ -13,16 +15,28 @@ public class Main {
 
 //        System.out.println("Hello world!");
     }
-    public static double principalMethod() {
-        double response = scanner.nextDouble();
+    public static int principalMethod() {
+        int response = scanner.nextInt();
         if(response > 0){
             System.out.println("your principal is: " + response);
+            return response;
         }else {
             System.out.println("Please enter your principal");
             return principalMethod();
         }
 
-        return response;
+    }
+
+
+    public static double interestMethod(){
+        double response = scanner.nextDouble();
+        if (response > 0){
+            System.out.println("your interest method is: " + response);
+            return response;
+        } else{
+            System.out.println("Please enter interest method");
+            return interestMethod();
+        }
     }
 
 }
