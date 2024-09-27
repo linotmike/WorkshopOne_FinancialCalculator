@@ -8,6 +8,10 @@ public class Main {
         int principal = principalMethod();
         System.out.println("What is the interest rate?");
         double interest = interestMethod();
+        System.out.println("Please enter the loan term in years?");
+        int loanTermInYear = loanTermMethod();
+
+
 
 
 
@@ -38,5 +42,20 @@ public class Main {
             return interestMethod();
         }
     }
+
+    public static int loanTermMethod(){
+        int response = scanner.nextInt();
+        if (response > 0) {
+            System.out.println("your loan term is: " + response + " years!");
+            return response;
+        } else {
+            System.out.println("Please enter loan term in years");
+            return loanTermMethod();
+        }
+        }
+
+
+
+
 
 }
