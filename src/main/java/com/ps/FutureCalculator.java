@@ -10,6 +10,8 @@ public class FutureCalculator {
         String name  = scanner.nextLine();
         System.out.println("What is the amount of your deposit?");
         double deposit = depositMethod();
+        System.out.println("What is the interest rate?");
+        double interestRate = interestRateMethod();
 
 
     }
@@ -24,6 +26,18 @@ public class FutureCalculator {
         } else {
             System.out.println("please enter your deposit");
             return depositMethod();
+        }
+    }
+
+    public static double interestRateMethod(){
+        double response = scanner.nextDouble();
+
+        if(response > 0){
+            System.out.println("your interest rate is: " + response + "%");
+            return response;
+        } else {
+            System.out.println("Please enter an interest rate? ");
+            return interestRateMethod();
         }
     }
 
