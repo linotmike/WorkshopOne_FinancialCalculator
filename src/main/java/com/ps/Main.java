@@ -61,6 +61,8 @@ public class Main {
         double monthlyPayment = principal * (monthlyInterest * Math.pow(1 + monthlyInterest, monthlyTotal))/
                 (Math.pow(1 +monthlyInterest, monthlyTotal) -1);
         System.out.println("The monthly payment is: " + monthlyPayment);
+        double totalInterest = monthlyTotal * monthlyPayment - principal;
+        System.out.println("Your total interest is: "+ totalInterest);
     }
 
 
