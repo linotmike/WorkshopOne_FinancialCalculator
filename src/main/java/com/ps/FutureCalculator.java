@@ -12,6 +12,8 @@ public class FutureCalculator {
         double deposit = depositMethod();
         System.out.println("What is the interest rate?");
         double interestRate = interestRateMethod();
+        System.out.println("What is the number of years?");
+        int years = numberOfYearsMethod();
 
 
     }
@@ -40,5 +42,16 @@ public class FutureCalculator {
             return interestRateMethod();
         }
     }
+    public static int numberOfYearsMethod() {
+        int response = scanner.nextInt();
+        if (response > 0){
+            System.out.println("The number of years you choose is: "+ response);
+            return response;
+        } else {
+            System.out.println("please enter the number of years");
+            return numberOfYearsMethod();
+        }
+    }
+
 
 }
